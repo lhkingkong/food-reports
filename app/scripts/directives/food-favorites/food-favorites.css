@@ -1,0 +1,115 @@
+.food-favorites{
+  position: fixed;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 0 5px #DDC;
+  left: 0;
+  top: 68px;
+  border-radius: 0 5px 5px 0;
+}
+.food-favorites.show-favorites{
+  min-width: 200px;
+  top: 62px;
+  bottom: 42px;
+}
+
+.food-favorites button{
+  background: none;
+  padding: 10px;
+  border: none;
+}
+.food-favorites .fa{
+  cursor: pointer;
+}
+.food-favorites .fa-times{
+  font-size: 18px;
+  float: right;
+  color: firebrick;
+}
+.food-favorites h4{
+  clear: both;
+  color: darkgreen;
+}
+.food-favorites .scrollable{
+  overflow: auto;
+  height: 100%;
+}
+
+.food-favorites tbody > tr:hover{
+  background: #CFC;
+  color: #333;
+  cursor: pointer;
+  transition: 1s background;
+}
+
+.food-favorites > div{
+  height: calc(100% - 45px);
+}
+.food-favorites > div.ng-hide-add,
+.food-favorites > button.ng-hide-add{
+  -webkit-animation:0.5s hide;
+  animation:0.5s hide;
+}
+
+@keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+
+.food-favorites > div.ng-hide-remove,
+.food-favorites > button.ng-hide-remove{
+  -webkit-animation:0.3s show;
+  animation:0.3s show;
+}
+
+@keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}

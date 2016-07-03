@@ -8,7 +8,7 @@
  * Service in the foodReportsApp.
  */
 angular.module('foodReportsApp')
-  .service('favoritesService', function(localStorageService) {
+  .service('favoritesService', function($rootScope, localStorageService) {
     var api = {
       getAll: getAll,
       setFavorites: setFavorites,
@@ -24,6 +24,9 @@ angular.module('foodReportsApp')
 
     function setFavorites(items) {
       var favorites = localStorageService.get('foodReportsFavorites');
+      if (!favorites) {
+        favorites = [];
+      }
       for (var j = 0, len2 = items.length; j < len2; j++) {
         items[j].isFavorite = false;
         for (var i = 0, len = favorites.length; i < len; i++) {
@@ -32,6 +35,7 @@ angular.module('foodReportsApp')
           }
         }
       }
+      $rootScope.$broadcast('updateFavorites');
     }
 
     function isFavorite(ndbno) {
@@ -63,6 +67,7 @@ angular.module('foodReportsApp')
         favorites.push(item);
         localStorageService.set('foodReportsFavorites', favorites);
       }
+      $rootScope.$broadcast('updateFavorites');
     }
 
   });

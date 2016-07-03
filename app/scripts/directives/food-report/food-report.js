@@ -30,6 +30,18 @@ angular.module('foodReportsApp')
           }
           return value;
         };
+        
+        scope.getEquivalent = function(label){
+          var value = '--';
+          for(var i = 0, len = scope.foodReport.food.nutrients[0].measures.length;i<len;i++){
+            if(scope.foodReport.food.nutrients[0].measures[i].label === label){
+              return scope.foodReport.food.nutrients[0].measures[i].eqv + ' g';
+            }
+          }
+          return value;
+        };
+        
+        
       }
     };
   });

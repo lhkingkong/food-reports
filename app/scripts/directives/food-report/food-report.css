@@ -5,24 +5,23 @@
 }
 .food-report h2{
   margin: 0;
+  width: calc(100% - 60px);
+  text-align: center;
+  color: darkgreen;
 }
-.food-report h2 .label{
+.food-report .food-report--header .label{
   float: right;
-  font-size: 0.5em;
+  font-size: 1em;
 }
 .food-report h4{
   clear: both;
   margin: 5px 0;
   color: #666;
 }
-.food-report th{
-  vertical-align: top;
-}
-.food-report tbody > tr:hover{
-  background: #CFC;
-  color: #333;
-  cursor: default;
-  transition: 1s background;
+.food-report .table > thead > tr > th{
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.9em;
 }
 .food-report .table-group-label{
   background: green;

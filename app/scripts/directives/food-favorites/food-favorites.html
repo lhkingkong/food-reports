@@ -1,0 +1,33 @@
+<div class="food-favorites" ng-class="{'show-favorites' : showFavorites}">
+  <button ng-hide="showFavorites" ng-click="showFavorites=true">
+    <i class="fa fa-star"></i>
+  </button>
+  <div ng-show="showFavorites">
+    <i class="fa fa-times" ng-click="showFavorites=false"></i>
+    <h4>Favorite food</h4>
+    <div class="scrollable" ng-show="favorites.length">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Group</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in favorites" ng-click="gotToReport(item)">
+            <td>{{item.name}}</td>
+            <td>{{item.group}}</td>
+            <td ng-click="toggleFavorite($event,item)">
+              <i class="fa" ng-class="item.isFavorite ? 'fa-star' : 'fa-star-o'"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div ng-hide="favorites">
+      No favorites
+    </div>
+  </div>
+</div>
+

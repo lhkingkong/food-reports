@@ -7,7 +7,7 @@
  * # foodSearch
  */
 angular.module('foodReportsApp')
-  .directive('foodSearch', function(apiService, favoritesService) {
+  .directive('foodSearch', function($timeout, apiService, favoritesService) {
     return {
       templateUrl: 'scripts/directives/food-search/food-search.html',
       scope: {
@@ -16,6 +16,9 @@ angular.module('foodReportsApp')
       restrict: 'E',
       replace: true,
       link: function postLink(scope, element, attrs) {
+        var timer;
+        scope.noSearch = false;
+        scope.searchText = '';
         scope.withASearch = false;
         scope.goSearch = function(keyEvent) {
           if (keyEvent.which === 13)
@@ -24,7 +27,12 @@ angular.module('foodReportsApp')
 
         scope.search = function() {
           if (scope.searchText.length < 1) {
-            alert('Please type something to search');
+            scope.noSearch = true;
+            $timeout.cancel(timer);
+            timer = $timeout(function(){
+              scope.noSearch = false;
+            },5000);
+            return false;
           }
           var params = {
             q: scope.searchText,
@@ -37,6 +45,14 @@ angular.module('foodReportsApp')
             scope.searchResults = res.list;
           });
         };
+
+        scope.$on('updateFavoritesInList', function() {
+          favoritesService.setFavorites(scope.searchResults.item);
+        });
+
+        scope.$on('$destroy', function() {
+          $timeout.cancel(timer);
+        });
       }
     };
   });

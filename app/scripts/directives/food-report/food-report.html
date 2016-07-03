@@ -1,31 +1,45 @@
 <div class="food-report">
   <div class="food-report--header">
-    <h2>{{foodReport.food.name}} <span class="label label-info">{{foodReport.food.ndbno}}</span></h2>
+    <span class="label label-success">{{foodReport.food.ndbno}}</span>
+    <h2>{{foodReport.food.name}}</h2>
     <h4>{{foodReport.type}} Report</h4>
   </div>
-<table class="table table-striped">
+  <table class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>Nutrient</th>
         <th>Unit</th>
-        <th>Value</th>
-        <th>pat <br> (1" sq, 1/3" high)</th>
-        <th>tbsp</th>
-        <th>cup</th>
-        <th>stick</th>
+        <th>Value
+          <br>per 100 g</th>
+        <th>pat
+          <br>(1" sq, 1/3" high)
+          <span class="label label-info">{{getEquivalent('pat (1" sq, 1/3" high)')}}</span>
+        </th>
+        <th>tbsp
+          <span class="label label-info">{{getEquivalent('tbsp')}}</span>
+        </th>
+        <th>cup
+          <span class="label label-info">{{getEquivalent('cup')}}</span>
+        </th>
+        <th>stick
+          <span class="label label-info">{{getEquivalent('stick')}}</span>
+        </th>
       </tr>
     </thead>
     <tbody ng-repeat="(group, nutrients) in foodReport.food.nutrients | groupBy: 'group'">
-      <tr><td colspan="7" class="table-group-label">{{group}} </td></tr>
+      <tr>
+        <td colspan="7" class="table-group-label">{{group}}</td>
+      </tr>
       <tr ng-repeat="item in nutrients">
         <td>{{item.name}}</td>
         <td>{{item.unit}}</td>
-        <td>{{item.value}}</td>
+        <td class="align-right">{{item.value}}</td>
         <td class="align-right">{{getMeasure(item, 'pat (1" sq, 1/3" high)')| number:2}}</td>
         <td class="align-right">{{getMeasure(item, 'tbsp')| number:2}}</td>
         <td class="align-right">{{getMeasure(item, 'cup')| number:2}}</td>
         <td class="align-right">{{getMeasure(item, 'stick')| number:2}}</td>
       </tr>
     </tbody>
-</table>
+  </table>
 </div>
+

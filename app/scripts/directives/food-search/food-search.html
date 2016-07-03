@@ -1,4 +1,6 @@
 <div class="food-search jumbotron" ng-class="{'with-a-search' : withASearch}">
-    <input type="search" placeholder="Food Search, e.g. butter, carrot, etc." ng-model="searchText" ng-keypress="goSearch($event)">
-    <button class="btn btn-primary" ng-click="search()"><i class="fa fa-search"></i></button>
+  <input type="search" placeholder="Food Search, e.g. butter, carrot, etc." ng-model="searchText" ng-keypress="goSearch($event)">
+  <button class="btn btn-primary" ng-click="search()"><i class="fa fa-search"></i>
+  </button>
+  <div class="alert alert-danger" role="alert" ng-if="noSearch">Please type your search in the input above.</div>
 </div>

@@ -1,8 +1,12 @@
 .food-search{
-  margin-top: 10%;
+  margin-top: 20%;
 }
 .food-search.with-a-search{
   margin-top: 0;
+}
+.food-search.with-a-search.jumbotron{
+  padding: 10px;
+  margin: -15px 0 20px;
 }
 .food-search input{
   font-size: 2em;
