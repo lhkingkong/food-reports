@@ -21,7 +21,7 @@
     ])
     .config(function($routeProvider) {
       $routeProvider
-        .when('/', {
+        .when('/search/:search?/:page?', {
           templateUrl: 'views/main.html',
           controller: 'MainCtrl',
           controllerAs: 'main'
@@ -52,7 +52,7 @@
           }
         })
         .otherwise({
-          redirectTo: '/'
+          redirectTo: '/search/'
         });
     });
 })();

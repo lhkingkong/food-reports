@@ -16,7 +16,6 @@ angular.module('foodReportsApp')
       restrict: 'E',
       replace: true,
       link: function postLink(scope, element, attrs) {
-        console.log(scope.foodReport);
         scope.gotToReport = function(item){
           $location.path('/report/'+item.ndbno);
         };

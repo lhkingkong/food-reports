@@ -1,4 +1,4 @@
-.food-list {
+.food-list .table{
   background: #EFEFEF;
   border-radius: 5px;
 }
@@ -7,4 +7,10 @@
   color: #333;
   cursor: pointer;
   transition: 1s background;
+}
+.food-list nav{
+  text-align: center;
+}
+.food-list .pagination a{
+  cursor: pointer;
 }

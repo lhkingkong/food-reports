@@ -6,6 +6,7 @@
   left: 0;
   top: 68px;
   border-radius: 0 5px 5px 0;
+  z-index: 1;
 }
 .food-favorites.show-favorites{
   min-width: 200px;
