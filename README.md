@@ -26,7 +26,7 @@ You'll be welcome into the main page which will have a search input.
 
 4.- Click on one of the results, this will sent you to Report of the selected food. (This uses the resolve on the route so you can get the data before enter to new view, also uses groupBy in a list).
 
-Extra functionality
+##### Bonus functionality
 
 5.- Go back, at the left side you'll have a button with a **star** icon, that will open your favorite foods.
 
