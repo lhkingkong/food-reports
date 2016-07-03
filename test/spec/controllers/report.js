@@ -12,12 +12,13 @@ describe('Controller: ReportCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     ReportCtrl = $controller('ReportCtrl', {
-      $scope: scope
+      $scope: scope,
+      foodReport: 1
       // place here mocked dependencies
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ReportCtrl.awesomeThings.length).toBe(3);
+  it('should be defined', function () {
+    expect(ReportCtrl).toBeDefined();
   });
 });
