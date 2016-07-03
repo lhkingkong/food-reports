@@ -7,7 +7,7 @@
  * # foodSearch
  */
 angular.module('foodReportsApp')
-  .directive('foodSearch', function(apiService) {
+  .directive('foodSearch', function(apiService, favoritesService) {
     return {
       templateUrl: 'scripts/directives/food-search/food-search.html',
       scope: {
@@ -16,6 +16,7 @@ angular.module('foodReportsApp')
       restrict: 'E',
       replace: true,
       link: function postLink(scope, element, attrs) {
+        scope.withASearch = false;
         scope.goSearch = function(keyEvent) {
           if (keyEvent.which === 13)
             scope.search();
@@ -31,6 +32,8 @@ angular.module('foodReportsApp')
             offset: 0,
           };
           apiService.get('search', params).then(function(res) {
+            scope.withASearch = true;
+            favoritesService.setFavorites(res.list.item);
             scope.searchResults = res.list;
           });
         };

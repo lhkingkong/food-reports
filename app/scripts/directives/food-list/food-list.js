@@ -7,7 +7,7 @@
  * # foodSearch
  */
 angular.module('foodReportsApp')
-  .directive('foodList', function($location) {
+  .directive('foodList', function($location, favoritesService) {
     return {
       templateUrl: 'scripts/directives/food-list/food-list.html',
       scope: {
@@ -18,6 +18,12 @@ angular.module('foodReportsApp')
       link: function postLink(scope, element, attrs) {
         scope.gotToReport = function(item){
           $location.path('/report/'+item.ndbno);
+        };
+        
+        scope.toggleFavorite = function(event, item){
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          favoritesService.toggleFavorite(item);
         };
       }
     };

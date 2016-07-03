@@ -1,5 +1,14 @@
-.food-search h2{
-  color: darkgreen;
-  padding: 0;
-  margin: 0;
+.food-search{
+  margin-top: 10%;
+}
+.food-search.with-a-search{
+  margin-top: 0;
+}
+.food-search input{
+  font-size: 2em;
+  width: calc(100% - 50px);
+}
+.food-search .btn{
+  vertical-align: top;
+  margin-top: 5px;
 }

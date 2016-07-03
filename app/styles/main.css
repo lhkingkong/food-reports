@@ -76,3 +76,9 @@ body > .container{
 .align-right{
   text-align: right;
 }
+.fa-star{
+  color: darkgoldenrod;
+}
+.fa-star-o{
+  color: gray;
+}
