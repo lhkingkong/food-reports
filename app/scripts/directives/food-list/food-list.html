@@ -1,0 +1,18 @@
+<div class="food-list">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Group</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in searchResults.item" ng-click="gotToReport(item)">
+        <td>{{item.ndbno}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.group}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>

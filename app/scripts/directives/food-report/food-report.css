@@ -1,0 +1,31 @@
+.food-report {
+  background: #EFEFEF;
+  border-radius: 5px;
+  padding: 10px;
+}
+.food-report h2{
+  margin: 0;
+}
+.food-report h2 .label{
+  float: right;
+  font-size: 0.5em;
+}
+.food-report h4{
+  clear: both;
+  margin: 5px 0;
+  color: #666;
+}
+.food-report th{
+  vertical-align: top;
+}
+.food-report tbody > tr:hover{
+  background: #CFC;
+  color: #333;
+  cursor: default;
+  transition: 1s background;
+}
+.food-report .table-group-label{
+  background: green;
+  color: white;
+  padding-left: 30px;
+}

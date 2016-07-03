@@ -1,4 +1,5 @@
 <div class="food-search">
     <h2>Food Search</h2>
-    <input type="search" placeholder="Food search">
+    <input type="search" placeholder="Food search" ng-model="searchText" ng-keypress="goSearch($event)">
+    <button class="btn btn-primary" ng-click="search()"><i class="fa fa-search"></i></button>
 </div>
